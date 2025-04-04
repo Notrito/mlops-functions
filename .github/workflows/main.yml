@@ -1,0 +1,32 @@
+# basic workflow
+
+name: CI
+
+# controls when the workflow will run
+on:
+  # triggers the workflow on push or pull request events but only for the main
+  name: Python application test with Github Actions
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Lint with pylint
+      run: |
+        make lint
+    - name: Test with pytest
+      run: |
+        make test
+    - name: Format code
+      run: |
+        make format
