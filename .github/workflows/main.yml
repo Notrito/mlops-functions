@@ -2,10 +2,14 @@
 
 name: CI
 
-# controls when the workflow will run
+# triggers the workflow on push or pull request events but only for the main
 on:
-  # triggers the workflow on push or pull request events but only for the main
-  name: Python application test with Github Actions
+  push:
+    branches:
+      -main
+  pull_request:
+    branches:
+      -main
 
 jobs:
   build:
