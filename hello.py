@@ -1,8 +1,8 @@
-def add(a,b):
-    return a+b
+def add(a, b):
+    return a + b
 
-letters = ['a', 'b', 'c']
+
+letters = ["a", "b", "c"]
 
 for item in letters:
     print(item)
-
